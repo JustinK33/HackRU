@@ -5,7 +5,7 @@
   align-items: center;
   min-height: 100vh;
   padding-top: 50px;
-  background-color: #f4f4f9;
+  background-color: #000080; /* Navy-blue background */
   font-family: Arial, sans-serif;
 }
 
@@ -14,13 +14,13 @@
   text-align: center;
   margin-bottom: 30px;
   font-size: 1.5em;
-  color: #333;
+  color: #c0c0c0; /* Silver text color */
 }
 
 .logo {
   font-size: 2.5em;
   font-weight: bold;
-  color: #007bff; /* A nice blue color */
+  color: white; /* White text color for "Macrave" */
   margin: 5px 0 0 0;
 }
 
@@ -35,6 +35,17 @@
   text-align: center;
 }
 
+.form-box input {
+    display: block;  /* Makes each input take up a full line */
+    width: 100%;
+    margin-bottom: 20px; /* Adds space between the input and the next element */
+    padding: 15px 10px;  /* Increases the size of the input box */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensures padding and border don't increase the total width */
+    font-size: 16px;
+}
+
 .form-box h2 {
   color: #333;
   margin-top: 0;
@@ -47,13 +58,13 @@
 /* Goal Selection Buttons */
 .button-group {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 15px;
   margin-top: 20px;
 }
 
 .button-group button {
-  flex-grow: 1;
+  width: 100%;
   padding: 15px 10px;
   border: none;
   border-radius: 8px;
