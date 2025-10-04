@@ -1,13 +1,18 @@
 from flask import Flask
+from flask_cors import CORS
+from api_routes import api  # <-- our blueprint
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fast_friendly_food.db
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-@app.route('/')
-def home():
-    return "Welcome to the Fast Friendly Food Calculator!"
+# Allow your React dev server to call this API (port 3000 → 5000)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# Mount all API endpoints at /api/...
+app.register_blueprint(api, url_prefix="/api")
+
+@app.get("/health")
+def health():
+    return {"ok": True}
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5001)
