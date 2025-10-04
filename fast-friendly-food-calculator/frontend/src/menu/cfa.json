@@ -1,0 +1,136 @@
+{
+  "restaurant": "Chick-fil-A",
+  "lastUpdated": "2025-10-04",
+  "items": [
+    {
+      "id": "cfa_chicken_biscuit",
+      "name": "Chick-fil-A® Chicken Biscuit",
+      "category": "breakfast",
+      "is_main": true,
+      "calories": 460,
+      "protein_g": 17,
+      "carbs_g": 45,
+      "fat_g": 23
+    },
+    {
+      "id": "cfa_spicy_chicken_biscuit",
+      "name": "Spicy Chicken Biscuit",
+      "category": "breakfast",
+      "is_main": true,
+      "calories": 430,
+      "protein_g": 16,
+      "carbs_g": 45,
+      "fat_g": 19
+    },
+    {
+      "id": "cfa_chickn_minis_4ct",
+      "name": "Chick-n-Minis™ (4 count)",
+      "category": "breakfast",
+      "is_main": true,
+      "calories": 360,
+      "protein_g": 20,
+      "carbs_g": 40,
+      "fat_g": 14
+    },
+    {
+      "id": "cfa_egg_white_grill",
+      "name": "Egg White Grill",
+      "category": "breakfast",
+      "is_main": true,
+      "calories": 290,
+      "protein_g": 27,
+      "carbs_g": 31,
+      "fat_g": 7
+    },
+    {
+      "id": "cfa_hash_brown_scramble_burrito",
+      "name": "Hash Brown Scramble Burrito w/ Chicken",
+      "category": "breakfast",
+      "is_main": true,
+      "calories": 700,
+      "protein_g": 34,
+      "carbs_g": 52,
+      "fat_g": 38
+    },
+    {
+      "id": "cfa_chicken_sandwich",
+      "name": "Chick-fil-A® Chicken Sandwich",
+      "category": "lunch",
+      "is_main": true,
+      "calories": 440,
+      "protein_g": 29,
+      "carbs_g": 41,
+      "fat_g": 19
+    },
+    {
+      "id": "cfa_spicy_chicken_sandwich",
+      "name": "Spicy Chicken Sandwich",
+      "category": "lunch",
+      "is_main": true,
+      "calories": 460,
+      "protein_g": 29,
+      "carbs_g": 41,
+      "fat_g": 20
+    },
+    {
+      "id": "cfa_grilled_chicken_sandwich",
+      "name": "Grilled Chicken Sandwich",
+      "category": "lunch",
+      "is_main": true,
+      "calories": 380,
+      "protein_g": 28,
+      "carbs_g": 44,
+      "fat_g": 11
+    },
+    {
+      "id": "cfa_chicken_nuggets_8ct",
+      "name": "Chick-fil-A® Nuggets (8 count)",
+      "category": "lunch",
+      "is_main": true,
+      "calories": 250,
+      "protein_g": 27,
+      "carbs_g": 11,
+      "fat_g": 11
+    },
+    {
+      "id": "cfa_grilled_nuggets_8ct",
+      "name": "Grilled Nuggets (8 count)",
+      "category": "lunch",
+      "is_main": true,
+      "calories": 130,
+      "protein_g": 25,
+      "carbs_g": 2,
+      "fat_g": 3
+    },
+    {
+      "id": "cfa_cobb_salad",
+      "name": "Cobb Salad (no dressing)",
+      "category": "salad",
+      "is_main": true,
+      "calories": 850,
+      "protein_g": 40,
+      "carbs_g": 29,
+      "fat_g": 61
+    },
+    {
+      "id": "cfa_spicy_southwest_salad",
+      "name": "Spicy Southwest Salad (no dressing)",
+      "category": "salad",
+      "is_main": true,
+      "calories": 690,
+      "protein_g": 33,
+      "carbs_g": 27,
+      "fat_g": 49
+    },
+    {
+      "id": "cfa_market_salad",
+      "name": "Market Salad (no dressing)",
+      "category": "salad",
+      "is_main": true,
+      "calories": 540,
+      "protein_g": 28,
+      "carbs_g": 42,
+      "fat_g": 31
+    }
+  ]
+}

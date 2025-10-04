@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // 1. Import useNavigate
 import './HomePage.css';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const navigate = useNavigate(); // 2. Call the hook
