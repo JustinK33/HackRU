@@ -1,0 +1,95 @@
+{
+  "restaurant": "Taco Bell",
+  "items": [
+    {
+      "name": "Bean Burrito",
+      "category": "main",
+      "calories": 350,
+      "protein": 13,
+      "carbs": 54,
+      "fat": 9,
+      "fiber": 12
+    },
+    {
+      "name": "Beefy 5-Layer Burrito",
+      "category": "main",
+      "calories": 500,
+      "protein": 21,
+      "carbs": 63,
+      "fat": 26,
+      "fiber": 9
+    },
+    {
+      "name": "Burrito Supreme – Chicken",
+      "category": "main",
+      "calories": 370,
+      "protein": 19,
+      "carbs": 50,
+      "fat": 8,
+      "fiber": 8
+    },
+    {
+      "name": "Fresco Chicken Soft Taco",
+      "category": "main",
+      "calories": 150,
+      "protein": 12,
+      "carbs": 12,
+      "fat": 4,
+      "fiber": 2
+    },
+    {
+      "name": "Black Bean Chalupa",
+      "category": "main",
+      "calories": 330,
+      "protein": 10,
+      "carbs": 30,
+      "fat": 14,
+      "fiber": 6
+    },
+    {
+      "name": "Power Menu Bowl – Chicken",
+      "category": "main",
+      "calories": 470,
+      "protein": 27,
+      "carbs": 40,
+      "fat": 20,
+      "fiber": 6
+    },
+    {
+      "name": "Chicken Burrito Supreme",
+      "category": "main",
+      "calories": 370,
+      "protein": 15,
+      "carbs": 44,
+      "fat": 10,
+      "fiber": 5
+    },
+    {
+      "name": "Beef Soft Taco",
+      "category": "main",
+      "calories": 180,
+      "protein": 8,
+      "carbs": 18,
+      "fat": 7,
+      "fiber": 3
+    },
+    {
+      "name": "Grilled Steak Soft Taco",
+      "category": "main",
+      "calories": 200,
+      "protein": 9,
+      "carbs": 19,
+      "fat": 8,
+      "fiber": 3
+    },
+    {
+      "name": "Cantina Chicken Bowl",
+      "category": "main",
+      "calories": 490,
+      "protein": 26,
+      "carbs": 50,
+      "fat": 20,
+      "fiber": 6
+    }
+  ]
+}
