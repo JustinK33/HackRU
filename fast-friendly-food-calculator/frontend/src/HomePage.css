@@ -1,0 +1,112 @@
+/* General App Container */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 50px;
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Welcome Message */
+.welcome-header {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.logo {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #007bff; /* A nice blue color */
+  margin: 5px 0 0 0;
+}
+
+/* Form Box */
+.form-box {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.form-box h2 {
+  color: #333;
+  margin-top: 0;
+}
+
+.form-box h3 {
+    margin-bottom: 25px;
+}
+
+/* Goal Selection Buttons */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.button-group button {
+  flex-grow: 1;
+  padding: 15px 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e9ecef;
+  color: #333;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s;
+}
+
+.button-group button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.button-group button span {
+    font-size: 1.2em;
+    margin-left: 5px;
+}
+
+/* Range Inputs */
+.input-group {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.input-group input[type="range"] {
+    width: 100%;
+    /* Basic styling for range consistency across browsers */
+    -webkit-appearance: none;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745; /* Green submit button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
