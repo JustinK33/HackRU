@@ -16,23 +16,25 @@
     max-width: 1000px;
     margin: 40px auto;
     padding: 30px;
-    background: linear-gradient(135deg, #f9f9f9, #eff3f7);
+    /* This line was removed to fix the white box issue */
+    /* background: linear-gradient(135deg, #f9f9f9, #eff3f7); */
     border-radius: 15px;
+    background: #6287AF;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .nutrition-details-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    width: 100%;
     margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e0e0e0;
+    align-items: center;
 }
 
 .nutrition-title {
     font-size: 2.2em;
-    color: #333;
+    color: white; /* Changed text color to white */
     margin: 0;
     font-weight: 700;
 }
@@ -48,6 +50,7 @@
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    justify-self: end;
 }
 
 .return-btn:hover {
@@ -57,24 +60,23 @@
 }
 
 .nutrition-details-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     gap: 40px;
-    align-items: flex-start; /* Align items to the top */
+    width: 100%;
+    align-items: flex-start;
 }
 
-.nutrition-details-container .suggestion-card {
-    flex: 1; /* Takes up available space */
-    background: white;
-    border: 1px solid #e0e0e0;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+.suggestion-card {
+    background-color: transparent; /* Changed to transparent to match background */
+    border: none; /* Removed border */
+    padding: 0; /* Removed padding */
+    box-shadow: none; /* Removed box-shadow */
 }
 
 .item-image-block {
-    flex: 1; /* Takes up available space */
     text-align: center;
-    background: white;
+    background-color: #00004c; /* Navy background color */
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -82,9 +84,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Initially hidden */
-    animation: fadeIn 0.8s ease-out forwards; /* Apply fade-in animation */
-    animation-delay: 0.3s; /* Delay for visual sequencing */
 }
 
 .nutrition-image {
@@ -97,18 +96,22 @@
 
 .item-name-title {
     font-size: 1.8em;
-    color: #333;
+    color: white; /* White text for the item name */
     margin: 0;
     font-weight: 600;
 }
 
-
 /* Re-using styles from HubPage for consistency */
-.suggestion-card .description {
-    color: #666;
-    margin-bottom: 20px;
-    font-style: italic;
-    line-height: 1.6;
+.suggestion-card .description,
+.suggestion-card .nutrition-info,
+.suggestion-card .nutrition-item .label,
+.suggestion-card .nutrition-item .value,
+.suggestion-card .macro-summary {
+    color: white; /* Adjusted text color for the light background */
+}
+
+.macro-summary macro-label {
+    color: white;
 }
 
 .suggestion-card .nutrition-info {
@@ -122,60 +125,37 @@
     justify-content: space-between;
     align-items: center;
     padding: 8px 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Lighter border */
 }
 
 .suggestion-card .nutrition-item:last-child {
     border-bottom: none;
 }
 
-.suggestion-card .nutrition-item .label {
-    font-weight: 600;
-    color: #555;
-    font-size: 1em;
-}
-
-.suggestion-card .nutrition-item .value {
-    color: #333;
-    font-weight: bold;
-    font-size: 1em;
-}
-
 .suggestion-card .nutrition-item.highlight {
-    background: rgba(102, 126, 234, 0.08);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 10px 15px;
-    margin: 5px -15px; /* Adjust padding to make it wider */
+    margin: 5px -15px;
     font-size: 1.1em;
-}
-
-.suggestion-card .macro-summary {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid #e0e0e0;
 }
 
 .suggestion-card .macro-bar {
     width: 100%;
     height: 10px;
-    background: #e0e0e0;
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 10px;
 }
 
-.suggestion-card .macro-fill {
-    height: 100%;
-    border-radius: 5px;
-    transition: width 0.3s ease;
-}
-
-.suggestion-card .macro-fill.protein {
-    background: linear-gradient(90deg, #667eea, #764ba2);
-}
-
-.suggestion-card .macro-label {
-    font-size: 0.9em;
-    color: #666;
-    font-weight: 500;
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .nutrition-details-container,
+    .nutrition-details-header {
+        grid-template-columns: 1fr;
+    }
+    .return-btn {
+        justify-self: center;
+    }
 }
