@@ -1,5 +1,6 @@
 .hub-container {
     min-height: 100vh;
+    position: relative; /* This is crucial for positioning the images */
 }
 
 .hub-header {
@@ -19,14 +20,14 @@
 .logo-placeholder {
     width: 40px;
     height: 40px;
-    background-color: #007bff; /* Placeholder color */
+    background-color: #007bff;
     border-radius: 50%;
 }
 
 .logo-text {
     font-size: 1.5em;
     font-weight: bold;
-    color: black; /* Changed text color to white for contrast */
+    color: black;
 }
 
 .header-right {
@@ -103,8 +104,7 @@
     font-size: 1.2em;
     margin: 0 0 20px 0;
     font-weight: 300;
-    /* Remove this line to get rid of the animation */
-    /* animation: fadeInUp 1s ease-out 0.5s forwards; */
+    animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 
 .user-stats {
@@ -456,4 +456,32 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+/* New scroll images styles */
+.scroll-image {
+    position: absolute;
+    z-index: -1;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scroll-image.visible {
+    opacity: 1;
+}
+
+.scroll-image.left {
+    bottom: -200px; /* Position it below the hub content */
+    left: -50px; /* Adjust horizontal position */
+    width: 550px;
+    height: auto;
+    transform: translateY(20px) rotate(180deg);
+}
+
+.scroll-image.right {
+    top: 550px;
+    right: -100px;
+    width: 450px;
+    height: auto;
+    transform: translateY(20px);
 }

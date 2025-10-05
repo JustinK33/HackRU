@@ -1,0 +1,19 @@
+/* src/components/ScrollFade.css */
+
+.scroll-fade-container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scroll-fade-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-image {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    max-width: 100%;
+}

@@ -65,7 +65,7 @@ const RestaurantInfo = () => {
             <div className="hub-container">
                 <header className="hub-header">
                     <div className="header-left clickable" onClick={() => navigate('/hub')}>
-                        <div className="logo-placeholder">{getLogoPlaceholder(pageTitle)}</div>
+                        <img src={macraveLogo} alt="Macrave Logo" className="macrave-logo" />
                         <span className="logo-text">Macrave</span>
                     </div>
                 </header>
@@ -93,7 +93,7 @@ const RestaurantInfo = () => {
             </header>
 
             <main className="hub-content">
-                <div className="restaurant-info-box">
+                <div className="restaurant-info-box animated-fade-in">
                     <div className="restaurant-header-content">
                         <div className="restaurant-logo-name">
                             <div className="logo-placeholder large">{getLogoPlaceholder(pageTitle)}</div>

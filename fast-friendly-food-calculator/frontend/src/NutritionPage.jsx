@@ -7,6 +7,9 @@ import './RestaurantInfo.css';
 import './NutritionPage.css';
 import macraveLogo from './assets/macrave.png';
 
+// Import the specific image file
+import stuffedCheddarImage from './assets/stuffed-cheddar.jpg';
+
 const NutritionPage = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -102,11 +105,20 @@ const NutritionPage = () => {
 
                         {/* Right side block with the placeholder image and name */}
                         <div className="item-image-block">
-                            <img 
-                                src={itemImageUrl}
-                                alt={item.name}
-                                className="nutrition-image"
-                            />
+                            {/* Conditional rendering for the specific image */}
+                            {item.name === 'Stuffed Cheddar Burger' && restaurantName === 'The Cheesecake Factory' ? (
+                                <img
+                                    src={stuffedCheddarImage}
+                                    alt={item.name}
+                                    className="nutrition-image"
+                                />
+                            ) : (
+                                <img 
+                                    src={itemImageUrl}
+                                    alt={item.name}
+                                    className="nutrition-image"
+                                />
+                            )}
                             <h3 className="item-name-title">{item.name}</h3>
                         </div>
                     </div>

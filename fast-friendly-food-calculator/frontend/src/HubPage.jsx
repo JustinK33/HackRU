@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from './contexts/UserContext';
 import { getMenuSuggestions } from './utils/api';
 import MenuSuggestions from './components/MenuSuggestions';
 import Carousel from './components/Carousel';
 import './HubPage.css';
+import chickenWrap from './assets/chicken-wrap.png';
+import burritoBowl from './assets/burrito-bowl.png';
 import macraveLogo from './assets/macrave.png';
 
 const HubPage = () => {
@@ -16,6 +18,11 @@ const HubPage = () => {
     const [runnerUps, setRunnerUps] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [showChickenWrap, setShowChickenWrap] = useState(false);
+    const [showBurritoBowl, setShowBurritoBowl] = useState(false);
+
+    const chickenWrapRef = useRef(null);
+    const burritoBowlRef = useRef(null);
 
     useEffect(() => {
         const fetchRestaurants = async () => {
@@ -29,6 +36,42 @@ const HubPage = () => {
             }
         };
         fetchRestaurants();
+    }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.target === chickenWrapRef.current) {
+                        setShowChickenWrap(entry.isIntersecting);
+                    }
+                    if (entry.target === burritoBowlRef.current) {
+                        setShowBurritoBowl(entry.isIntersecting);
+                    }
+                });
+            },
+            {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1,
+            }
+        );
+
+        if (chickenWrapRef.current) {
+            observer.observe(chickenWrapRef.current);
+        }
+        if (burritoBowlRef.current) {
+            observer.observe(burritoBowlRef.current);
+        }
+
+        return () => {
+            if (chickenWrapRef.current) {
+                observer.unobserve(chickenWrapRef.current);
+            }
+            if (burritoBowlRef.current) {
+                observer.unobserve(burritoBowlRef.current);
+            }
+        };
     }, []);
 
     const handleGetSuggestions = () => {
@@ -65,7 +108,7 @@ const HubPage = () => {
 
             <main className="hub-content">
                 <div className="welcome-section">
-                    <h2>Fast Decisions, Smart Eating</h2>
+                    <h2>Find Your Perfect Meal</h2>
                     <p>Select a restaurant and we'll find the best options for your <strong>{user.fitnessGoal.charAt(0).toUpperCase() + user.fitnessGoal.slice(1)}</strong> goals!</p>
                     <div className="user-stats">
                         <span className="stat">Age: {user.age}</span>
@@ -116,6 +159,19 @@ const HubPage = () => {
                     </div>
                 )}
             </main>
+            
+            <img 
+                ref={chickenWrapRef}
+                src={chickenWrap} 
+                alt="Chicken Wrap" 
+                className={`scroll-image left ${showChickenWrap ? 'visible' : ''}`} 
+            />
+            <img 
+                ref={burritoBowlRef}
+                src={burritoBowl} 
+                alt="Burrito Bowl" 
+                className={`scroll-image right ${showBurritoBowl ? 'visible' : ''}`} 
+            />
         </div>
     );
 };

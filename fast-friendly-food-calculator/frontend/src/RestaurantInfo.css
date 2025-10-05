@@ -14,18 +14,34 @@
     margin: 0 auto;
 }
 
+/* --- Animation --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+
 /* --- Restaurant Header Box --- */
 
 /* The lighter navy blue container for the logo, name, and generate button */
 .restaurant-info-box {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 12px;
-    border: 1px solid rgba(209, 213, 219, 0.3);
+    background-color: #00004c;
     border-radius: 12px;
     padding: 25px 30px;
     margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: white;
 }
 
 .restaurant-header-content {
@@ -51,7 +67,7 @@
 .logo-placeholder.large {
     width: 50px;
     height: 50px;
-    background-color: #ffc107; /* Bright placeholder color */
+    background-color: #ffc107;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -63,7 +79,7 @@
 
 /* Generate Top 3 Button */
 .generate-btn {
-    background: linear-gradient(135deg, #28a745, #1e7e34); /* Green gradient */
+    background: linear-gradient(135deg, #28a745, #1e7e34);
     color: white;
     border: none;
     padding: 12px 24px;
@@ -96,7 +112,7 @@
 .filter-and-items {
     margin-bottom: 20px;
     display: flex;
-    justify-content: center; /* FIXED: Now centers the filter dropdown */
+    justify-content: center;
     width: 100%;
 }
 
@@ -107,7 +123,7 @@
 }
 
 .filter-label {
-    color: black;
+    color: white;
     font-weight: 500;
 }
 
@@ -139,11 +155,9 @@
 }
 
 .menu-item-card {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 12px;
-    border: 1px solid rgba(209, 213, 219, 0.3);
+    background-color: #00005d; /* Slightly different shade for card background */
+    color: white;
+    border-radius: 10px;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -195,15 +209,8 @@
         flex-direction: column;
         align-items: flex-start;
     }
-
     .generate-btn {
         width: 100%;
         margin-top: 10px;
     }
-}
-
-.macrave-logo {
-    height: 3em; /* Set height relative to the font-size of the parent */
-    width: auto;
-    cursor: pointer;
 }
