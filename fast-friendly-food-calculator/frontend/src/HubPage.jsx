@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useUser } from './contexts/UserContext';
 import { getMenuSuggestions } from './utils/api';
 import MenuSuggestions from './components/MenuSuggestions';
+import Carousel from './components/Carousel';
 import './HubPage.css';
+import macraveLogo from './assets/macrave.png';
 
 const HubPage = () => {
     const { user, logout } = useUser();
+    const navigate = useNavigate();
     const [restaurants, setRestaurants] = useState([]);
     const [selectedRestaurant, setSelectedRestaurant] = useState('');
     const [suggestions, setSuggestions] = useState([]);
@@ -13,7 +17,6 @@ const HubPage = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    // Fetch available restaurants on component mount
     useEffect(() => {
         const fetchRestaurants = async () => {
             try {
@@ -28,32 +31,25 @@ const HubPage = () => {
         fetchRestaurants();
     }, []);
 
-    const handleGetSuggestions = async () => {
+    const handleGetSuggestions = () => {
         if (!selectedRestaurant) {
             setError('Please select a restaurant');
             return;
         }
 
-        setLoading(true);
-        setError('');
-        
-        try {
-            const data = await getMenuSuggestions(selectedRestaurant, user.fitnessGoal);
-            setSuggestions(data.suggestions || []);
-            setRunnerUps(data.runner_ups || []);
-        } catch (err) {
-            console.error('Error fetching suggestions:', err);
-            setError('Failed to get menu suggestions');
-        } finally {
-            setLoading(false);
-        }
+        const encodedRestaurantName = encodeURIComponent(selectedRestaurant);
+        navigate(`/restaurant/${encodedRestaurantName}`);
     };
 
     return (
         <div className="hub-container">
             <header className="hub-header">
-                <div className="header-left">
-                    <div className="logo-placeholder"></div>
+                <div 
+                    className="header-left clickable" 
+                    onClick={() => navigate('/hub')} 
+                    style={{cursor: 'pointer'}}
+                >
+                    <img src={macraveLogo} alt="Macrave Logo" className="macrave-logo" />
                     <span className="logo-text">Macrave</span>
                 </div>
                 <div className="header-right">
@@ -65,9 +61,11 @@ const HubPage = () => {
                 </div>
             </header>
 
+            <Carousel />
+
             <main className="hub-content">
                 <div className="welcome-section">
-                    <h2>Find Your Perfect Meal</h2>
+                    <h2>Fast Decisions, Smart Eating</h2>
                     <p>Select a restaurant and we'll find the best options for your <strong>{user.fitnessGoal.charAt(0).toUpperCase() + user.fitnessGoal.slice(1)}</strong> goals!</p>
                     <div className="user-stats">
                         <span className="stat">Age: {user.age}</span>
@@ -98,7 +96,7 @@ const HubPage = () => {
                         onClick={handleGetSuggestions}
                         disabled={loading || !selectedRestaurant}
                     >
-                        {loading ? '🔍 Finding your perfect meal...' : '🚀 Get My Recommendations'}
+                        {loading ? '🔍 Finding your perfect meal...' : '🚀 View Menu'}
                     </button>
                 </div>
 

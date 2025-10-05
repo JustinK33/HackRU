@@ -1,0 +1,44 @@
+/* --- GeneratePage.css --- */
+
+/* Styles for the box displaying the user's goal */
+.goal-info-box {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #f8f9fa; /* Light background for contrast against navy hub-container */
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.goal-text-display {
+    font-size: 1.5em;
+    color: #333;
+    margin: 0;
+    font-weight: 500;
+}
+
+.goal-value {
+    font-weight: 700;
+    color: #667eea; /* Primary color highlight */
+    margin-left: 8px;
+}
+
+.category-filter-note {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #6c757d;
+}
+
+.suggestions-section {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.macrave-logo {
+    height: 3em; /* Set height relative to the font-size of the parent */
+    width: auto;
+    cursor: pointer;
+}

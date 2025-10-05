@@ -1,0 +1,106 @@
+/* NutritionPage.css */
+
+/* Main content layout */
+.nutrition-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Updated layout to use a grid with a 2:1 column ratio */
+.nutrition-details-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Nutrition box is twice the size of the image box */
+    gap: 40px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Container for the title and button */
+.nutrition-details-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Matches the content grid below */
+    gap: 40px;
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.nutrition-title {
+    color: black;
+    font-size: 1.5em;
+    margin: 0;
+    text-align: center;
+}
+
+.return-btn {
+    background: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    justify-self: center;
+}
+
+.return-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the nutrition block on the left */
+.nutrition-block {
+    /* Reuses .menu-suggestions styling from HubPage.css */
+}
+
+/* Styles for the image block on the right */
+.item-image-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #00004c;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nutrition-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.item-name-title {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .nutrition-details-container,
+    .nutrition-details-header {
+        grid-template-columns: 1fr;
+    }
+    .return-btn {
+        justify-self: center;
+    }
+}
+
+.macrave-logo {
+    height: 3em; /* Set height relative to the font-size of the parent */
+    width: auto;
+    cursor: pointer;
+}

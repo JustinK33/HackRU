@@ -1,7 +1,5 @@
 .hub-container {
     min-height: 100vh;
-    background-color: #000080; /* Navy-blue background to match the homepage */
-    font-family: Arial, sans-serif;
 }
 
 .hub-header {
@@ -9,7 +7,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #000066; /* Slightly darker navy blue */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -29,7 +26,7 @@
 .logo-text {
     font-size: 1.5em;
     font-weight: bold;
-    color: white; /* Changed text color to white for contrast */
+    color: black; /* Changed text color to white for contrast */
 }
 
 .header-right {
@@ -46,7 +43,7 @@
 }
 
 .welcome-text {
-    color: white;
+    color: black;
     font-size: 0.9em;
     font-weight: 500;
 }
@@ -91,7 +88,7 @@
 .welcome-section {
     text-align: center;
     margin-bottom: 40px;
-    color: white;
+    color: black;
 }
 
 .welcome-section h2 {
@@ -99,13 +96,15 @@
     margin: 0 0 15px 0;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out forwards;
 }
 
 .welcome-section p {
     font-size: 1.2em;
     margin: 0 0 20px 0;
-    opacity: 0.9;
     font-weight: 300;
+    /* Remove this line to get rid of the animation */
+    /* animation: fadeInUp 1s ease-out 0.5s forwards; */
 }
 
 .user-stats {
@@ -145,7 +144,7 @@
     display: block;
     margin-bottom: 15px;
     font-weight: 600;
-    color: white;
+    color: black;
     font-size: 1.1em;
 }
 
@@ -440,4 +439,21 @@
 .nutrition-info.compact .nutrition-item .value {
     font-size: 0.9em;
     font-weight: 600;
+}
+
+.macrave-logo {
+    height: 3em; /* Set height relative to the font-size of the parent */
+    width: auto;
+    cursor: pointer;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
